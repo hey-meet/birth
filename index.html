@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, My Love 🌹</title>
+<style>
+:root{--p1:#fff0f3;--p2:#ffd6e0;--p3:#ffb3c6;--p4:#ff8fab;--p5:#fb6f92;--p6:#c9184a;--ink:#7a2f48;color-scheme:light}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Quicksand','Segoe UI',system-ui,sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--p1),var(--p2) 45%,var(--p3));background-attachment:fixed;overflow-x:hidden}
+body.lock{overflow:hidden;height:100vh}
+h1,h2,.script{font-family:'Pacifico','Brush Script MT',cursive;font-weight:400;color:var(--p5)}
+.sec{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px;position:relative;z-index:2;opacity:0;transform:translateY(40px);transition:1s}
+.sec.in{opacity:1;transform:none}
+h2{font-size:clamp(1.8rem,7vw,2.8rem);margin-bottom:10px}
+p.sub{max-width:420px;line-height:1.6;margin:6px 0 16px}
+.btn{background:linear-gradient(135deg,var(--p4),var(--p5));color:#fff;border:0;border-radius:40px;padding:14px 30px;font:700 1.05rem 'Quicksand',system-ui,sans-serif;box-shadow:0 8px 24px #fb6f9266;cursor:pointer;transition:.2s;user-select:none;-webkit-user-select:none}
+.btn:active{transform:scale(.94)}
+.card{background:#fffb;border-radius:18px;padding:16px;line-height:1.6;max-width:380px;min-height:70px;box-shadow:0 8px 24px #fb6f9233;transition:.4s}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.petal{position:absolute;top:-40px;animation:fall linear infinite;opacity:.8}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+#music{position:fixed;top:12px;right:12px;z-index:10;width:44px;height:44px;border-radius:50%;border:0;background:#fffc;font-size:1.3rem;box-shadow:0 4px 14px #fb6f9244;display:none}
+#hero{opacity:1;transform:none}
+#count{font-family:'Pacifico',cursive;font-size:clamp(6rem,35vw,12rem);color:var(--p5);line-height:1;text-shadow:0 8px 30px #ff8fab88}
+.pop{animation:pop .9s ease-out}
+@keyframes pop{0%{transform:scale(2.2);opacity:0}30%{opacity:1}100%{transform:scale(1)}}
+.heart{display:inline-block;animation:beat 1.2s infinite}
+@keyframes beat{50%{transform:scale(1.25)}}
+#title{font-size:clamp(2.4rem,11vw,4.5rem)}
+#title span{display:inline-block;opacity:0;transform:translateY(30px) scale(.5)}
+#title.go span{animation:letter .6s forwards}
+@keyframes letter{to{opacity:1;transform:none}}
+.tabs{display:flex;gap:10px;margin-bottom:14px}
+.tab{background:#fff9;border:2px solid var(--p3);border-radius:30px;padding:10px 18px;font:700 .95rem 'Quicksand',system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.tab.on{background:var(--p5);color:#fff;border-color:var(--p5)}
+/* cake */
+.cake{position:relative;width:240px;height:240px;margin:10px auto}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:14px 14px 10px 10px}
+.t1{bottom:0;width:230px;height:70px;background:linear-gradient(var(--p3),var(--p4))}
+.t2{bottom:70px;width:170px;height:60px;background:linear-gradient(var(--p2),var(--p3))}
+.t3{bottom:130px;width:110px;height:50px;background:linear-gradient(var(--p1),var(--p2))}
+.candle{position:absolute;left:50%;bottom:180px;transform:translateX(-50%);width:14px;height:48px;background:repeating-linear-gradient(45deg,#fff,#fff 6px,var(--p4) 6px,var(--p4) 12px);border-radius:4px;cursor:pointer}
+.candle::before{content:"";position:absolute;inset:-30px -30px 0}
+.flame{position:absolute;left:50%;top:-30px;width:18px;height:30px;margin-left:-9px;background:radial-gradient(ellipse at 50% 70%,#fff 10%,#ffd36b 40%,#ff8a3d 80%);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;transform-origin:bottom;animation:flick .25s infinite alternate;box-shadow:0 0 30px 10px #ffb84a88;transition:.4s}
+@keyframes flick{to{transform:scale(1.1,.92) rotate(-4deg)}}
+.out .flame{opacity:0;transform:scale(0);box-shadow:none}
+.hint{animation:beat 1.4s infinite;font-weight:700}
+/* kisses */
+#kissBtn{font-size:4.5rem;background:none;border:0;cursor:pointer;animation:beat 1.4s infinite;user-select:none;-webkit-user-select:none}
+.fk{position:fixed;z-index:8;pointer-events:none;font-size:2rem;animation:up 1.6s ease-out forwards}
+@keyframes up{to{transform:translate(var(--dx),-60vh) scale(1.8) rotate(var(--r));opacity:0}}
+.bar{width:min(300px,80vw);height:16px;background:#fff9;border-radius:10px;overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p4),var(--p6));transition:width .15s}
+/* gifts */
+.gifts{display:grid;grid-template-columns:repeat(3,92px);gap:16px;justify-content:center;margin:12px 0}
+.gift{width:92px;height:92px;position:relative;cursor:pointer;transition:.3s}
+.gift .box{position:absolute;bottom:0;left:6px;right:6px;height:58px;background:var(--p4);border-radius:6px;box-shadow:0 6px 16px #fb6f9255}
+.gift .box::after{content:"";position:absolute;left:50%;width:14px;top:0;bottom:0;margin-left:-7px;background:var(--p1)}
+.gift .lid{position:absolute;bottom:52px;left:0;right:0;height:26px;background:var(--p5);border-radius:6px;transition:.6s cubic-bezier(.3,1.8,.5,1);transform-origin:left bottom}
+.gift .lid::before{content:"🎀";position:absolute;left:50%;top:-18px;transform:translateX(-50%);font-size:1.5rem}
+.gift.open .lid{transform:translate(18px,-46px) rotate(24deg)}
+.gift .in{position:absolute;left:50%;bottom:30px;transform:translateX(-50%) scale(0);font-size:2rem;transition:.6s .15s}
+.gift.open .in{transform:translateX(-50%) translateY(-34px) scale(1)}
+/* game */
+.arena{position:relative;width:min(340px,90vw);height:300px;background:#fff8;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px #fb6f9233;margin:10px 0}
+.hh{position:absolute;top:-40px;font-size:2.2rem;cursor:pointer;animation:dropH linear forwards;user-select:none}
+@keyframes dropH{to{top:310px}}
+/* envelope */
+.env{position:relative;width:min(300px,82vw);height:200px;margin:26px auto 0;cursor:pointer}
+.env .back{position:absolute;inset:0;background:var(--p4);border-radius:10px;box-shadow:0 12px 30px #fb6f9255}
+.env .flap{position:absolute;left:0;right:0;top:0;height:110px;background:var(--p5);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s,z-index 0s .35s;z-index:4}
+.env .front{position:absolute;inset:0;background:linear-gradient(135deg,var(--p3) 50%,var(--p4) 50%);clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);z-index:3;border-radius:10px}
+.env .seal{position:absolute;left:50%;top:80px;margin-left:-20px;font-size:2rem;z-index:5;transition:.4s}
+.letter{position:absolute;left:12px;right:12px;bottom:8px;height:170px;background:#fffdf8;border-radius:8px;z-index:2;padding:14px;font-size:.8rem;overflow:hidden;transition:transform 1s .5s;color:var(--ink)}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .seal{opacity:0}
+.env.open .letter{transform:translateY(-150px);z-index:6;height:auto;min-height:300px;font-size:.95rem;line-height:1.6;text-align:left;padding:18px;box-shadow:0 10px 30px #fb6f9244}
+.env.open{margin-bottom:300px}
+.letter b{font-family:'Pacifico',cursive;color:var(--p5);font-weight:400;font-size:1.1rem}
+#final h1{font-size:clamp(2.6rem,12vw,5rem);line-height:1.2;animation:glow 2s infinite alternate}
+@keyframes glow{to{text-shadow:0 0 24px #ff8fabcc}}
+.from{font-size:1.6rem;margin:18px 0 10px}
+</style></head><body class="lock">
+<div id="petals"></div><canvas id="fx"></canvas>
+<button id="music" aria-label="Music">🎵</button>
+
+<section class="sec" id="hero">
+  <div id="pre"><h2>For my favourite person 🌹</h2>
+    <p class="sub">Something special is waiting for you…<br>Tap to begin <span class="heart">💗</span></p>
+    <button class="btn" id="start">Open my surprise</button></div>
+  <div id="cd" style="display:none"><p class="sub script" style="font-size:1.5rem">Your surprise starts in…</p><div id="count">5</div></div>
+</section>
+
+<section class="sec" id="celebrate">
+  <h1 id="title"></h1>
+  <p class="sub script" style="font-size:1.6rem;margin-top:14px">my love 💖</p>
+  <p class="sub">Tap anywhere for more fireworks ✨<br>Keep scrolling, there’s so much more 👇</p>
+</section>
+
+<section class="sec" id="story">
+  <h2>Our 3 years 💞</h2>
+  <p class="sub">Tap a year to relive it</p>
+  <div class="tabs"><button class="tab" data-i="0">Year 1</button><button class="tab" data-i="1">Year 2</button><button class="tab" data-i="2">Year 3</button></div>
+  <div class="card" id="storyTxt">Tap a year 🌷</div>
+</section>
+
+<section class="sec" id="cakeSec">
+  <h2>Make a wish 🌸</h2>
+  <p class="sub">Close your eyes, think of your biggest wish…<br><span class="hint">…then tap the candle to blow it out</span></p>
+  <div class="cake" id="cake"><div class="candle" id="candle"><div class="flame"></div></div>
+    <div class="tier t3"></div><div class="tier t2"></div><div class="tier t1"></div></div>
+  <p id="wishmsg" style="min-height:60px;font-size:1.15rem"></p>
+</section>
+
+<section class="sec" id="kissSec">
+  <h2>Kisses for you 💋</h2>
+  <p class="sub">I can’t be there, so I’m sending them here.<br>Tap as many times as you like!</p>
+  <button id="kissBtn" aria-label="Send kiss">😘</button>
+  <div class="bar"><i id="kbar"></i></div>
+  <p id="kcount" style="font-weight:700">Kisses sent: 0 / 10</p>
+  <div class="card" id="kmsg" style="margin-top:12px">Send 10 kisses to unlock a surprise 💝</div>
+</section>
+
+<section class="sec" id="giftSec">
+  <h2>Little gifts for you 🎁</h2>
+  <p class="sub">Open all 6 gifts · <b id="gcount">0</b>/6 opened</p>
+  <div class="gifts" id="gifts"></div>
+  <div class="card" id="giftmsg">Pick a gift 💝</div>
+</section>
+
+<section class="sec" id="gameSec">
+  <h2>Catch my hearts 💗</h2>
+  <p class="sub">Tap 10 hearts before they fall!</p>
+  <div class="arena" id="arena"></div>
+  <p id="score" style="font-weight:700;margin-bottom:10px">Hearts: 0 / 10</p>
+  <button class="btn" id="gstart">Start</button>
+</section>
+
+<section class="sec" id="whySec">
+  <h2>Why I love you 🥰</h2>
+  <p class="sub">Tap the button for a reason</p>
+  <div class="card" id="why" style="font-size:1.15rem;display:flex;align-items:center;justify-content:center;min-height:100px">Reason #1 is waiting… 💭</div>
+  <button class="btn" id="whyBtn" style="margin-top:16px">Tell me why 💕</button>
+</section>
+
+<section class="sec" id="meterSec">
+  <h2>Love meter 📊</h2>
+  <p class="sub">Press and hold to measure my love for you</p>
+  <div class="bar" style="height:26px"><i id="lbar"></i></div>
+  <p id="lpct" style="font-size:1.4rem;font-weight:700;margin-bottom:14px">0%</p>
+  <button class="btn" id="lbtn">Hold me 🤍</button>
+</section>
+
+<section class="sec" id="envSec">
+  <h2>One last thing… 💌</h2>
+  <p class="sub">A letter just for you. Tap the envelope.</p>
+  <div class="env" id="env"><div class="back"></div>
+    <div class="letter"><b>My dearest love,</b><br>
+      I’m so sorry we can’t meet on your special day. This little virtual celebration is my way of being right there with you. 🥹<br><br>
+      Three beautiful years together, and you’re still the best thing that ever happened to me. Feel special always, stay happy, stay healthy and keep shining.<br><br>
+      I love you, today and every day. 🌹<br><b>— Meetu</b></div>
+    <div class="front"></div><div class="flap"></div><div class="seal">💗</div></div>
+</section>
+
+<section class="sec" id="final">
+  <h1>Happy Birthday,<br>My Love 💖</h1>
+  <p class="script from">— from Meetu</p>
+  <p class="sub">Always yours, always with you. 🌹</p>
+  <button class="btn" id="again">Celebrate again 🎆</button>
+</section>
+
+<script>
+const NAME="Yogiii";
+const $=s=>document.querySelector(s),cv=$('#fx'),cx=cv.getContext('2d');
+let W,H,P=[];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+const COL=['#ff8fab','#fb6f92','#ffb3c6','#ffd6e0','#ff5d8f','#fff','#ffc2d1'];
+function burst(x,y,n=60,conf){for(let i=0;i<n;i++){const a=Math.random()*6.28,s=(conf?3:2)+Math.random()*(conf?7:5);P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-(conf?4:0),l:1,c:COL[Math.random()*COL.length|0],r:conf,sz:3+Math.random()*4})}}
+function loop(){cx.clearRect(0,0,W,H);P=P.filter(p=>p.l>0);for(const p of P){p.x+=p.vx;p.y+=p.vy;p.vy+=.08;p.vx*=.985;p.l-=.011;cx.globalAlpha=Math.max(p.l,0);cx.fillStyle=p.c;if(p.r)cx.fillRect(p.x,p.y,p.sz,p.sz*1.6);else{cx.beginPath();cx.arc(p.x,p.y,p.sz/1.6,0,6.28);cx.fill()}}requestAnimationFrame(loop)}loop();
+function show(n=6,conf){for(let i=0;i<n;i++)setTimeout(()=>burst(W*(.15+Math.random()*.7),H*(.15+Math.random()*.4),conf?40:70,conf),i*280)}
+addEventListener('pointerdown',e=>{if(!document.body.classList.contains('lock')&&!e.target.closest('button,.candle,.gift,.env,.hh'))burst(e.clientX,e.clientY,50)});
+// petals
+['🌸','🌷','🌹','💮','🌺'].forEach(e=>{for(let i=0;i<5;i++){const d=document.createElement('div');d.className='petal';d.textContent=e;d.style.cssText=`left:${Math.random()*100}%;font-size:${14+Math.random()*16}px;animation-duration:${8+Math.random()*10}s;animation-delay:${-Math.random()*14}s`;$('#petals').appendChild(d)}});
+// music (synthesised, no files needed)
+let ac,playing=false,tm;
+const N={G4:392,A4:440,B4:494,C5:523,D5:587,E5:659,F5:698,G5:784},b=.5;
+const TUNE=[['G4',.75],['G4',.25],['A4',1],['G4',1],['C5',1],['B4',2],['G4',.75],['G4',.25],['A4',1],['G4',1],['D5',1],['C5',2],['G4',.75],['G4',.25],['G5',1],['E5',1],['C5',1],['B4',1],['A4',1],['F5',.75],['F5',.25],['E5',1],['C5',1],['D5',1],['C5',2]];
+function tune(){if(!playing)return;let t=ac.currentTime+.1;for(const[n,d]of TUNE){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=N[n];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+d*b*.95);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+d*b);t+=d*b}tm=setTimeout(tune,(t-ac.currentTime+1.5)*1000)}
+function music(on){playing=on;$('#music').textContent=on?'🎵':'🔇';if(on){ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();clearTimeout(tm);tune()}else clearTimeout(tm)}
+$('#music').onclick=()=>music(!playing);
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');if(e.target.id==='celebrate')$('#title').classList.add('go');if(e.target.id==='final')show(8)}}),{threshold:.3});
+document.querySelectorAll('.sec').forEach(s=>io.observe(s));
+$('#title').innerHTML='Happy Birthday'.split('').map((c,i)=>`<span style="animation-delay:${i*.07}s">${c===' '?'&nbsp;':c}</span>`).join('')+'<br>'+NAME.split('').map((c,i)=>`<span style="animation-delay:${1.2+i*.09}s;color:var(--p6)">${c}</span>`).join('');
+// start + countdown
+$('#start').onclick=()=>{music(true);$('#music').style.display='block';$('#pre').style.display='none';$('#cd').style.display='block';let n=5;const c=$('#count');c.className='pop';const iv=setInterval(()=>{n--;if(n>0){c.textContent=n;c.className='';void c.offsetWidth;c.className='pop'}else{clearInterval(iv);c.textContent='🎉';c.className='pop';document.body.classList.remove('lock');show(10);show(8,true);setTimeout(()=>$('#celebrate').scrollIntoView(),900);setTimeout(()=>{show(6);show(5,true)},2500)}},1000)};
+// story (edit these lines to your own memories!)
+const STORY=['Year 1 🌱 — It all began with a hello, and somehow my whole world changed. Every little moment with you became my favourite memory.','Year 2 🌷 — We grew closer, laughed harder, and learned each other’s hearts. You became my safe place and my best friend.','Year 3 🌹 — Three years, and I love you more than ever. Even miles apart, my heart is always with you.'];
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');$('#storyTxt').textContent=STORY[t.dataset.i];const r=t.getBoundingClientRect();burst(r.left+30,r.top,25,true)});
+// candle
+let blown=false;$('#candle').onclick=()=>{if(blown)return;blown=true;$('#cake').classList.add('out');const r=$('#candle').getBoundingClientRect();burst(r.left+7,r.top,40);show(6,true);$('#wishmsg').innerHTML='Your wish is on its way to the stars ✨<br>May every wish come true, my love 🌹';$('.hint').style.display='none'};
+// kisses
+let kc=0;$('#kissBtn').onclick=e=>{kc++;const r=e.currentTarget.getBoundingClientRect();for(let i=0;i<3;i++){const s=document.createElement('span');s.className='fk';s.textContent=['💋','😘','💕'][i];s.style.cssText=`left:${r.left+r.width/2-16+(Math.random()*60-30)}px;top:${r.top}px;--dx:${Math.random()*120-60}px;--r:${Math.random()*60-30}deg`;document.body.appendChild(s);setTimeout(()=>s.remove(),1700)}
+$('#kbar').style.width=Math.min(kc*10,100)+'%';$('#kcount').textContent='Kisses sent: '+kc+(kc<10?' / 10':' 💋');if(kc===10){$('#kmsg').innerHTML='Mmmuah! 💋 All 10 delivered!<br>Coupon: <b>unlimited kisses &amp; hugs</b>, valid forever, redeemable the day we meet 🥰';show(6,true)}else if(kc>10)$('#kmsg').textContent='Okay okay, I’ll keep them all safe for you 😘 ×'+kc};
+// gifts
+const G=[['💍','Three years of you and me, and every single day with you has been my favourite one. 💞'],['🌷','You make ordinary days feel like magic. Your smile is my favourite place to be. 🌷'],['🧸','Coupon: one big warm hug, any time you need it. 🤗 (Redeem when we meet!)'],['🍫','Coupon: one date night of YOUR choice, I’ll plan everything. 🍽️'],['⭐','My promise: to keep choosing you, cheering for you and loving you more every year. 🤍'],['🌹','Wishing you endless happiness, good health and every dream coming true. Stay happy, always. 🌹']];
+let go=0;G.forEach(([em,m])=>{const g=document.createElement('div');g.className='gift';g.innerHTML=`<div class="box"></div><div class="lid"></div><div class="in">${em}</div>`;g.onclick=()=>{if(!g.classList.contains('open')){g.classList.add('open');go++;$('#gcount').textContent=go;if(go===6)show(8,true)}$('#giftmsg').textContent=m;const r=g.getBoundingClientRect();burst(r.left+46,r.top+10,30,true)};$('#gifts').appendChild(g)});
+// hearts game
+let sc=0,giv;function spawn(){const h=document.createElement('div');h.className='hh';h.textContent=['💗','💖','💕','🌹'][Math.random()*4|0];h.style.left=Math.random()*85+'%';h.style.animationDuration=(2.6+Math.random()*1.6)+'s';h.onpointerdown=()=>{h.remove();sc++;$('#score').textContent='Hearts: '+sc+' / 10';if(sc>=10)win()};setTimeout(()=>h.remove(),4300);$('#arena').appendChild(h)}
+function win(){clearInterval(giv);$('#arena').innerHTML='<div style="padding:90px 20px;font-size:1.3rem" class="script">You caught my heart 💖<br>(it was always yours)</div>';$('#gstart').textContent='Play again';$('#gstart').style.display='';show(6,true)}
+$('#gstart').onclick=()=>{sc=0;$('#score').textContent='Hearts: 0 / 10';$('#arena').innerHTML='';$('#gstart').style.display='none';clearInterval(giv);giv=setInterval(spawn,600)};
+// reasons
+const R=['Your smile makes my worst day better. 😊','You listen to me like no one else does. 🥹','You’re beautiful inside and out. 🌸','You believe in me even when I don’t. 💪','Your laugh is my favourite sound. 🎶','You make me want to be a better person. 🌟','Home is wherever you are. 🏡','Simply because you’re YOU, Yogiii. 💖'];
+let ri=0;$('#whyBtn').onclick=()=>{$('#why').textContent='#'+(ri%R.length+1)+' · '+R[ri%R.length];ri++;burst(W/2,H/2,25,true);if(ri===R.length)$('#whyBtn').textContent='And a million more… 💕'};
+// love meter
+let lv=0,liv;const lstart=e=>{e.preventDefault();clearInterval(liv);liv=setInterval(()=>{lv=Math.min(lv+2,100);$('#lbar').style.width=lv+'%';$('#lpct').textContent=lv+'%';if(lv>=100){clearInterval(liv);$('#lpct').textContent='∞ Too much to measure! 💗';show(8,true)}},50)},lstop=()=>clearInterval(liv);
+['pointerdown'].forEach(ev=>$('#lbtn').addEventListener(ev,lstart));['pointerup','pointerleave','pointercancel'].forEach(ev=>$('#lbtn').addEventListener(ev,lstop));
+// envelope
+$('#env').onclick=function(){if(this.classList.contains('open'))return;this.classList.add('open');setTimeout(()=>show(5),600);setTimeout(()=>$('#final').scrollIntoView(),7000)};
+$('#again').onclick=()=>show(12);
+</script></body></html>
